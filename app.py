@@ -15,9 +15,8 @@ def infer(character: str):
     for image in images:
         buffered = BytesIO()
         image.save(buffered, format="JPEG")
-        img_str = base64.b64encode(buffered.getvalue())
-        image_b64 = (f"{img_str}")
-        print(image_b64)
+        img_str = base64.b64encode(buffered.getvalue()).decode("utf-8")
+        image_b64 = (f"data:image/jpeg;base64,{img_str}")
         result_images.append(image_b64)
     return result_images
 
