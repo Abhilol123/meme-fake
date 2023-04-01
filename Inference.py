@@ -55,4 +55,7 @@ class Inference:
                 negative_prompt="longbody, lowres, bad anatomy, bad hands, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality"
             ).images[0]
             images_generated.append(image)
+            break
         return images_generated
+
+inference = Inference()
