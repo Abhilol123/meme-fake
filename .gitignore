@@ -3,6 +3,7 @@ cache/*
 __pycache__
 __pycache__/*
 output
+output*
 output/*
 other_junk
 other_junk/*
