@@ -52,7 +52,7 @@ def dummy(images, **kwargs):
 pipe.safety_checker = dummy
 
 for character in ["Abhinav_3", "Zaryab", "Anmol", "Billy"]:
-    os.makedirs(f"./output2/{character}/", exist_ok=True)
+    os.makedirs(f"./output3/{character}/", exist_ok=True)
     # Load lora
     patch_pipe(pipe, f"./lora/{character}.safetensors")
     tune_lora_scale(pipe.unet, 0.6)
@@ -67,4 +67,4 @@ for character in ["Abhinav_3", "Zaryab", "Anmol", "Billy"]:
             mask_image=mask_image,
             negative_prompt="longbody, lowres, bad anatomy, bad hands, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality"
         ).images[0]
-        image.save(f"./output2/{character}/{file_name}")
+        image.save(f"./output3/{character}/{file_name}")
